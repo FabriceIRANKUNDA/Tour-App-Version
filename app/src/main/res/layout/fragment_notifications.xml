@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/display_text"
+        android:text=" Add Tour Information..."
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/txt_title"
+        android:layout_margin="16dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tourName"
+        android:layout_below="@id/display_text"
+        android:hint="Enter Tour Name..."
+        android:inputType="textPersonName|textCapWords"
+        android:padding="10dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/background"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tPrice"
+        android:layout_below="@id/tourName"
+        android:hint="Enter Price..."
+        android:padding="10dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/background"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tourDesc"
+        android:layout_below="@id/tPrice"
+        android:hint="Enter Short Description..."
+        android:padding="10dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/background"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addButton"
+        android:layout_below="@id/tourDesc"
+        android:layout_centerHorizontal="true"
+        android:text="Register"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/txt_title"
+        android:padding="5dp"
+        android:layout_margin="16dp"
+
+        />
+
+
+
+</RelativeLayout>
