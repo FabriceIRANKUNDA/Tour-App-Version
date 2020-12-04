@@ -56,6 +56,8 @@ public class TourOverView extends AppCompatActivity {
                 desc.setText("");
                 tourName.setText("");
                 price.setText("");
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
 
             }
         });
