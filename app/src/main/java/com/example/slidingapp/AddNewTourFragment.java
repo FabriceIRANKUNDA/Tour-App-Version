@@ -63,14 +63,18 @@ public class AddNewTourFragment extends Fragment {
         spinner.startLoadingDialog();
         String url = "https://wetouryou.herokuapp.com/api/v1/tours";
 
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("name", name);
-        params.put("price", price);
-        params.put("summary", description);
-        params.put("imageCover", "avatar");
+        JSONObject ob = new JSONObject();
+        try{
+            ob.put("name", name);
+            ob.put("price", Integer.parseInt(price));
+            ob.put("summary", description);
+            ob.put("imageCover", "avatar");
+        }catch (Exception e){
+
+        }
 
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(params), new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, url, ob, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {
