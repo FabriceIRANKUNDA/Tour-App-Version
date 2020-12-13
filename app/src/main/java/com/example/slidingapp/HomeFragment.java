@@ -1,6 +1,8 @@
 package com.example.slidingapp;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +51,20 @@ public class HomeFragment extends Fragment {
         final Loading spinner = new Loading(getActivity());
         spinner.startLoadingDialog();
         tours = new ArrayList<>();
-        loadTours(spinner);
+
+        ConnectivityManager check = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] info = check.getAllNetworkInfo();
+        boolean connected = false;
+        for(int index = 0; index < info.length; index++){
+            if(info[index].getState() == NetworkInfo.State.CONNECTED){
+                connected = true;
+            }
+        }
+        if(connected){
+            loadTours(spinner);
+        }else{
+            Toast.makeText(getContext(), "Connect to the internet", Toast.LENGTH_LONG).show();
+        }
 
         return view;
     }

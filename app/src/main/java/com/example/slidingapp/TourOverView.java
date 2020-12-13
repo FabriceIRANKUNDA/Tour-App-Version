@@ -52,7 +52,6 @@ public class TourOverView extends AppCompatActivity {
             public void onClick(View v) {
                 final Loading spinner = new Loading(TourOverView.this);
                 submitData(tourName.getText().toString(), price.getText().toString(), desc.getText().toString(),spinner);
-
                 desc.setText("");
                 tourName.setText("");
                 price.setText("");
